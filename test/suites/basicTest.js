@@ -34,7 +34,7 @@ describe("less to json loader test:", function () {
 
 	// <TESTS> ///////////////////////////////////////
 	it("should parse the less file", function (done) {
-		currentCallback = function (res) {
+		currentCallback = function (err, res) {
 			var json = eval(res);
 			expect(json.test).to.equal('20rem');
 			expect(json.test2).to.equal('10rem');

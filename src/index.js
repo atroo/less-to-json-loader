@@ -50,7 +50,7 @@ module.exports = function (source) {
 		} catch (err) {
 			return callback(err);
 		}
-		callback(lessVars);
+		callback(null, "module.exports = " + JSON.stringify(lessVars));
 	});
 };
 
