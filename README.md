@@ -7,10 +7,15 @@ This loader comes to the rescue, assuming you are using the awesome [webpack](ht
 
 ## Usage
 
+Install
+```javascript
+npm install less-to-json-loader
+```
+
 Because you most likely just need to load a few of those ressource files, the normal usecase is to override the default loader for your less files for this specific require call! Therefore be carefull to prepend the extra "!" to your require string!
 
 ```javascript
-	var lessVars = require("!less-to-json-loader!./../../assets/styles/dimensions.less");
+var lessVars = require("!less-to-json-loader!./../../assets/styles/dimensions.less");
 ```
 
 dimensions.less
