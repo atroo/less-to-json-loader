@@ -1,0 +1,30 @@
+{
+  "name": "less-to-json-loader",
+  "version": "1.0.0",
+  "description": "convert a less variables file into a json object to make use of it in your application",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "less",
+    "webpack",
+    "loader",
+    "json",
+    "convert",
+    "variables"
+  ],
+  "author": "atroo info@atroo.de",
+  "license": "MIT",
+  "dependencies": {
+    "less": "~2.7.1",
+    "loader-utils": "^0.2.11",
+    "lodash": "^4.6.1"
+  },
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "gulp": "^3.8.10",
+    "gulp-mocha": "^1.1.1",
+    "gulp-util": "^3.0.1"
+  }
+}
