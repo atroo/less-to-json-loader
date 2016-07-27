@@ -14,13 +14,18 @@ npm install less-to-json-loader
 
 Because you most likely just need to load a few of those ressource files, the normal usecase is to override the default loader for your less files for this specific require call! Therefore be carefull to prepend the extra "!" to your require string!
 
-```javascript
-var lessVars = require("!less-to-json-loader!./../../assets/styles/dimensions.less");
-```
-
 dimensions.less
 ```less
 @test: 20rem;
 @test2: @test/2;
 ```
+
+usage in the application
+```javascript
+var lessVars = require("!less-to-json-loader!./../../assets/styles/dimensions.less");
+
+console.log(lessVars.test); //>20rem
+console.log(lessVars.test2); //>10rem
+```
+
 Note: the loader does the math for you as expected.
