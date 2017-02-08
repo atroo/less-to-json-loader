@@ -6,7 +6,7 @@ var expect = chai.expect;
 
 var loader = require('../../src/index');
 
-describe("less to json loader basic test:", function () {
+describe("less to json loader import test:", function () {
 	var testContent = "";
 	var currentCallback;
 	// <SETUP> ///////////////////////////////////////
@@ -18,11 +18,12 @@ describe("less to json loader basic test:", function () {
 			async: function () {
 				return currentCallback;
 			},
+			query:'?path=./test/data/sub',
 			addContextDependency: emptFn,
 			cacheable: emptFn,
-			resource: path.join(__dirname, "../data/test.less")
+			resource: path.join(__dirname, "../data/testImport.less")
 		}
-		testContent = fs.readFileSync(path.join(__dirname, "../data/test.less"), 'utf8');
+		testContent = fs.readFileSync(path.join(__dirname, "../data/testImport.less"), 'utf8');
 		done();
 	});
 
@@ -33,11 +34,10 @@ describe("less to json loader basic test:", function () {
 
 
 	// <TESTS> ///////////////////////////////////////
-	it("should parse the basic less file", function (done) {
+	it("should parse import directives properly", function (done) {
 		currentCallback = function (err, res) {
 			var json = eval(res);
-			expect(json.test).to.equal('20rem');
-			expect(json.test2).to.equal('10rem');
+			expect(json.testImport).to.equal('4em');
 			done();
 		};
 		loader.call(thisScope, testContent);
