@@ -29,3 +29,9 @@ console.log(lessVars.test2); //>10rem
 ```
 
 Note: the loader does the math for you as expected.
+
+If you need to pass in a folder to resolve imported less files from you can do so via a queryparam
+```javascript
+var lessVars = require("!less-to-json-loader!./../../assets/styles/dimensions.less?path=./test/data/sub");
+```
+
