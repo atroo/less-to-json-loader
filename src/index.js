@@ -13,13 +13,16 @@ module.exports = function (source) {
 	var query = loaderUtils.parseQuery(this.query);
 	var camelCase = query.camelCase || false;
 	var prefix = query.ignoreWithPrefix || null;
+	var paths = query.path || [];
 
 	var callback = this.async();
 	this.cacheable && this.cacheable();
 
 	var str = source,
 		lessVars = {},
-		config = {};
+		config = {
+			paths: path
+		};
 
 	if (query.sourceMap) {
 		config.sourceMap = {
